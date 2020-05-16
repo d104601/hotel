@@ -1,0 +1,22 @@
+body{
+    height: 100%;
+    font-family: "Roboto", sans-serif;
+    background-repeat: no-repeat;
+    margin: 0 auto;
+    text-align: center;
+}
+
+h1{
+    color: #00c4c9;
+    text-align: center;
+}
+
+h2{
+    text-align: center;
+}
+
+table{
+    margin: 0 auto;
+    text-align: left;
+    vertical-align: middle;
+}
