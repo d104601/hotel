@@ -20,27 +20,40 @@
         }
         else
         {
-            echo "<p style='color: black; display:inline'>Hello! {$_SESSION['username']}. </p> <a type='button' class='btn btn-dark' href='signout.php'>Sign out</a>";
+            echo "firstname\\";
         }
         ?>
     </div>
 
     <div class="jumbotron">
         <h1 class="text-center">We will book for you</h1>
+        <?php
+        echo "<h3 class=\"text-center\">Current date is ".$_SESSION['currentdate']."</h3>"
+        ?>
         <h3 class="text-center">Let's find your best hotel here.</h3>
         <p class="text-center p-4">
-            <table style="margin-left: auto; margin-right: auto;">
-                <tr>
-                    <td>
-                        <a class="btn btn-primary btn-lg btn-block" href="#" role="button">Find Your Hotel</a><br>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <a class="btn btn-primary btn-lg btn-block" href="signInCheck.php" role="button">Manage My Reservation</a>
-                    </td>
-                </tr>
-            </table>
+        <table style="margin-left: auto; margin-right: auto;">
+            <tr>
+                <td>
+                    <a class="btn btn-primary btn-lg btn-block" href="./findhotel/findhotel.php" role="button">Find Your Hotel</a><br>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a class="btn btn-primary btn-lg btn-block" href="signInCheck.php" role="button">Manage My Reservation</a>
+                </td>
+            </tr>
+        </table>
+        </p>
+        <h3 class="text-center">Are you hotel manager?</h3>
+        <p class="text-center p-4">
+        <table style="margin-left: auto; margin-right: auto;">
+            <tr>
+                <td>
+                    <a class="btn btn-primary btn-lg btn-block" href="signin_admin.html" role="button">Sign In as admin</a>
+                </td>
+            </tr>
+        </table>
         </p>
     </div>
 </div>
@@ -65,4 +78,3 @@
     }
 </style>
 </html>
-

@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -6,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
     <title>Sign Up</title>
-    <link rel="stylesheet" href="../../OneDrive/CS370/css/bootstrap.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <style type="text/css">
@@ -92,14 +91,30 @@
 </head>
 <body>
 <div class="signup-form">
-    <form>
-        <div class="form-group text-center">
-            <h5 style='color: red; text-align: center'>Username or password is wrong</h5>
+    <form action="admin_removehotel.php" method="post">
+        <h2>Remove Hotel</h2>
+        <p>Please select hotel you want to remove from chain!</p>
+        <hr>
+        <div class="form-group">
+            <select class="form-control" name="hotelcode" required="required">
+                <?php
+                session_start();
+                $db = mysqli_connect("sql9.freemysqlhosting.net", "sql9341133", "r3xXEQjzaB", "sql9341133", "3306");
+                $admin = $_SESSION['username_admin'];
+                $gethotel = mysqli_query($db, "SELECT *from hotel WHERE admin='$admin'");
+                while ($row = mysqli_fetch_array($gethotel)) {
+                    echo "<option>" . $row['hotelcode'] . "</option>";
+                }
+                ?>
+            </select>
+            Warning: All reservation and rooms with this hotel also will be removed.
         </div>
-        <div class="form-group text-center">
-            <button class='btn btn-primary btn-lg' onclick="history.go(-1)">Go back</button>
+
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary btn-lg">Remove Hotel</button>
         </div>
     </form>
+    <a href="adminpage_hotelchain.php">Click here to go back</a></div>
 </div>
 </body>
 </html>

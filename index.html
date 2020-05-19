@@ -1,0 +1,58 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Main page</title>
+    <script type="text/javascript" src="../../OneDrive/CS370/js/bootstrap.js"></script>
+    <link rel="stylesheet" href="../../OneDrive/CS370/css/bootstrap.css">
+</head>
+<body>
+<div class="container p-3">
+    <div class="d-inline-block">
+        <h2 style="color: #1d2124">Hotel Reservation System</h2>
+    </div>
+    <div class="d-inline-block float-lg-right">
+    </div>
+
+    <div class="jumbotron">
+        <h1 class="text-center">Welcome to Hotel reservation system</h1>
+        <h3 class="text-center">By Taeyong Lee, Patric Ou, Warren Ho, Zhiheng Tan, and Lin Bo Zhang</h3>
+        <p class="text-center p-4">
+        <h3 class="text-center">Please enter current date first</h3>
+        </p>
+        <form action="mainpage.php" method="post">
+        <table class="text-center" style="margin-left: auto; margin-right: auto;">
+            <tr>
+                <td>
+                    <input type="date" class="form-control" name="currentdate" required="required">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button type="submit" class="btn btn-primary btn-lg">Enter</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+    </div>
+</div>
+
+</body>
+<style type="text/css">
+    .container{
+        background: #ffffff;
+        box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+        margin: 30px auto;
+    }
+    .jumbotron{
+        background-image: url('../../OneDrive/CS370/images/hotel.jpg');
+        background-size: cover;
+        text-shadow: black 0.2em 0.2em 0.2em;
+        color:white;
+    }
+    body{
+        color: #fff;
+        background-color: #1d2124;
+        font-family: 'Roboto', sans-serif;
+    }
+</style>
+</html>

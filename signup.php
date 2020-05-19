@@ -1,5 +1,4 @@
 <?php
-
 $username = $_POST['username'];
 $pw = $_POST['password'];
 $pwc = $_POST['confirm_password'];

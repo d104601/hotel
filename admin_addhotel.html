@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
     <title>Sign Up</title>
-    <link rel="stylesheet" href="../../OneDrive/CS370/css/bootstrap.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <style type="text/css">
@@ -92,14 +92,50 @@
 </head>
 <body>
 <div class="signup-form">
-    <form>
-        <div class="form-group text-center">
-            <h5 style='color: red; text-align: center'>Username or password is wrong</h5>
+    <form action="admin_addhotel.php" method="post">
+        <h2>Add Hotel</h2>
+        <p>Please fill in this form to add a new hotel!</p>
+        <hr>
+        <div class="form-group">
+            <input type="text" class="form-control" name="hotelcode" placeholder="Hotel code" required="required">
+            This will be identification of your hotel. Only admin can see this.
         </div>
-        <div class="form-group text-center">
-            <button class='btn btn-primary btn-lg' onclick="history.go(-1)">Go back</button>
+        <div class="form-group">
+            <input type="text" class="form-control" name="hotelname" placeholder="Hotel name" required="required">
+            This is Hotel name that customers can see
+        </div>
+        <div class="form-group">
+            Location
+            <div class="row">
+                <div class="col-xs-6"><input type="number" min="0" max="100" class="form-control" name="i" placeholder="Coordinate i" required="required"></div>
+                <div class="col-xs-6"><input type="number" min="0" max="100" class="form-control" name="j" placeholder="Coordinate j" required="required"></div>
+            </div>
+            Please enter location of hotel in coordinate (i, j) where 0 <= i,j <=100
+        </div>
+
+        <div class="form-group">
+            Number of Room
+            <div class="row">
+                <div class="col-xs-6"><input type="number" min="0" class="form-control" name="singleroom" placeholder="Regular Room" required="required"></div>
+                <div class="col-xs-6"><input type="number" min="0" class="form-control" name="doubleroom" placeholder="Deluxe Room" required="required"></div>
+            </div>
+            Please enter how many rooms this hotel have.
+        </div>
+
+        <div class="form-group">
+            Rate of Room
+            <div class="row">
+                <div class="col-xs-6"><input type="number" min="0" class="form-control" name="prices" placeholder="Regular Room" required="required"></div>
+                <div class="col-xs-6"><input type="number" min="0" class="form-control" name="priced" placeholder="Deluxe Room" required="required"></div>
+            </div>
+            Please enter price of each room of this hotel in US currency($).
+        </div>
+
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary btn-lg">Add Hotel</button>
         </div>
     </form>
+    <a href="adminpage_hotelchain.php">Click here to go back</a></div>
 </div>
 </body>
 </html>
