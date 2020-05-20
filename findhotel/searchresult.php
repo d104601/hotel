@@ -2,8 +2,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Main page</title>
-    <script type="text/javascript" src="../../../OneDrive/CS370/js/bootstrap.js"></script>
-    <link rel="stylesheet" href="../../../OneDrive/CS370/css/bootstrap.css">
+    <script type="text/javascript" src="../js/bootstrap.js"></script>
+    <link rel="stylesheet" href="../css/bootstrap.css">
 </head>
 <body>
 <div class="container p-3">
@@ -78,7 +78,7 @@
                     $regAvail = $row['singleroom'] - $regReserved->num_rows;
                     $delAvail = $row['doubleroom'] - $delReserved->num_rows;
                     echo "<form action='reservation.php' method='post'><tr>
-<td>".$row['hotelname']."</td>
+<td name='hotelname'>".$row['hotelname']."</td>
 <td>"."(".$row['addressi'].", ".$row['addressj'].")</td>
 <td>Regular: ".$regAvail."<br>Deluxe:".$delAvail."</td>
 <td>Regular: $".$row['pricenormal']."<br>Deluxe: $".$row['pricedeluxe']."</td>
@@ -103,7 +103,7 @@
         margin: 30px auto;
     }
     .jumbotron{
-        background-image: url('../../../OneDrive/CS370/images/hotel.jpg');
+        background-image: url('../images/hotel.jpg');
         background-size: cover;
         text-shadow: black 0.2em 0.2em 0.2em;
         color:white;

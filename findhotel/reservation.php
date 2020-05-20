@@ -6,8 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
     <title>Sign Up</title>
-    <script type="text/javascript" src="js/bootstrap.js"></script>
-    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <style type="text/css">
@@ -93,14 +92,32 @@
 </head>
 <body>
 <div class="signup-form">
-    <form>
-        <div class="form-group text-center">
-            <h5 style='color: red; text-align: center'>Username or password is wrong</h5>
+    <form action="signup.php" method="post">
+        <h2>Sign Up</h2>
+        <p>Please fill in this form to create an account!</p>
+        <hr>
+        <div class="form-group">
+            <div class="row">
+                <div class="col-xs-6"><input type="text" class="form-control" name="first_name" placeholder="First Name" required="required"></div>
+                <div class="col-xs-6"><input type="text" class="form-control" name="last_name" placeholder="Last Name" required="required"></div>
+            </div>
         </div>
-        <div class="form-group text-center">
-            <button class='btn btn-primary btn-lg' onclick="history.go(-1)">Go back</button>
+        <div class="form-group">
+            <input type="text" class="form-control" name="username" placeholder="Username" required="required">
+
+        </div>
+        <div class="form-group">
+            <input type="password" class="form-control" name="password" placeholder="Password" required="required">
+        </div>
+        <div class="form-group">
+            <input type="password" class="form-control" name="confirm_password" placeholder="Confirm Password" required="required">
+        </div>
+
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary btn-lg">Sign Up</button>
         </div>
     </form>
+    <div class="hint-text">Already have an account? <a href="signin.html">Sign In here</a></div>
 </div>
 </body>
 </html>

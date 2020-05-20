@@ -26,7 +26,7 @@
         <table id="adminmenu" style="margin-left: auto; margin-right: auto;">
             <tr>
                 <td>
-                    <a class="btn btn-primary btn-lg btn-block" href="adminpage_reservation.html" role="button">Manage Reservations</a><br>
+                    <a class="btn btn-primary btn-lg btn-block" href="adminpage_reservation.php" role="button">Manage Reservations</a><br>
                 </td>
             </tr>
             <tr>

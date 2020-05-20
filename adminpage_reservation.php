@@ -26,11 +26,14 @@
         <table id="hotelchain" class="table table-striped">
             <thead>
             <tr>
+                <th>Reservation ID</th>
                 <th>Hotel Code</th>
                 <th>Branch Name</th>
-                <th>Address in Coordinate</th>
-                <th>No. of Rooms</th>
-                <th>Price</th>
+                <th>Roomcode</th>
+                <th>Room Type</th>
+                <th>Check in</th>
+                <th>Check out</th>
+                <th></th>
             </tr>
             </thead>
             <tbody>
@@ -38,15 +41,17 @@
             session_start();
             $db = mysqli_connect("sql9.freemysqlhosting.net", "sql9341133", "r3xXEQjzaB", "sql9341133","3306");
             $admin = $_SESSION['username_admin'];
-            $gethotel = mysqli_query($db,"SELECT *from hotel WHERE admin='$admin'");
+            $chain = $_SESSION['hotelchain'];
+            $gethotel = mysqli_query($db,"SELECT *from reservation WHERE hotelchain='$chain'");
             while($row = mysqli_fetch_array($gethotel))
             {
                 echo "<tr>
-<td name='code'>".$row['hotelcode']."</td>
-<td name='hotelname'>".$row['hotelname']."</td>
-<td>"."(".$row['addressi'].", ".$row['addressj'].")</td>
-<td>Regular: ".$row['singleroom']."<br>Deluxe:".$row['doubleroom']."</td>
-<td>Regular: ".$row['pricenormal']."<br>Deluxe:".$row['pricedeluxe']."</td>
+<td>".$row['id']."</td>
+<td name='hotelcode'>".$row['hotelcode']."</td>
+<td>".$row['hotelname']."</td>
+<td>".$row['roomtype']."</td>
+<td>".$row['checkin']."</td>
+<td>".$row['checkout']."</td>
 </tr>";
             }
             ?>
