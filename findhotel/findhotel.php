@@ -2,6 +2,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Main page</title>
+
     <script type="text/javascript" src="../js/bootstrap.js"></script>
     <link rel="stylesheet" href="../css/bootstrap.css">
 </head>
@@ -47,7 +48,6 @@
                     <td colspan="2" style="text-align: center">
                         <h4>Sort search result by</h4>
                         <select class="form-control" name="sort">
-                            <option>Hotel name</option>
                             <option>Regular room price</option>
                             <option>Deluxe room price</option>
                         </select>

@@ -28,6 +28,7 @@
     <div class="jumbotron">
         <h1 class="text-center">We will book for you</h1>
         <?php
+        if(isset($_SESSION['Username']))
         echo "<h3 class=\"text-center\">Current date is ".$_SESSION['currentdate']."</h3>"
         ?>
         <h3 class="text-center">Let's find your best hotel here.</h3>
@@ -55,6 +56,9 @@
             </tr>
         </table>
         </p>
+    </div>
+    <div>
+        <a class="btn btn-primary" href="signout.php" role="button">Signout</a>
     </div>
 </div>
 

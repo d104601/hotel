@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<?php
+include 'conn.php';
+?>
+<html style="background-color: rgb(150, 150, 150);">
+
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <meta charset="UTF8" />
+  <meta name="author" content="Y." />
+  <meta name="keywords" content="First Exam" />
+  <meta name="description" content="CSC355 Code" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Exam 1</title>
+  <style>
+      <!-- render with bootstrap if possible-- > h1 {
+        color: blue;
+        font-family: "Times New Roman", Times, serif;
+        font-size: 25px;
+        text-indent: 5cm;
+      }
+      .btn {
+        margin: 4px 4px;
+        background-color: #1c87c9;
+        border: 3px solid #000000;
+        border-radius: 5px;
+        text-align: center;
+        font-size: 10px;
+        color: #fff;
+        cursor: pointer;
+        width: 70px;
+        height: 70px;
+        word-break: keep-all;
+      }
+      *:hover {
+        color: black;
+      }
+      body {
+        padding-top: 5%;
+        text-align: center;
+      }
+      h1 {
+        text-indent: 0em;
+      }
+    </style>
+    <?php
+    $result = mysqli_query($conn,"select * from hotel");
+
+    echo '<script>
+          function createGrid() {
+            $("h1").html("Hotels Address");
+            var count = 1; //assinging ids,
+            for (var i = 0; i <= 10; i++) {
+              for (var j = 0; j < 10; j++) {
+                var mapbutton = document.createElement("button");
+                mapbutton.className = "btn";
+                mapbutton.id = count;
+                mapbutton.value = "0";
+                mapbutton.textContent = ("--("+i+","+j+")--");
+                mapbutton.textContent += " Blank ";
+                document.body.append(mapbutton);
+                count++;
+              }
+              linebreak = document.createElement("br");
+              document.body.append(linebreak);
+            }
+          }
+        </script>';
+    ?>
+  </head>
+  
+  
+    <h1>CS370</h1>
+    <body>
+        <script type="text/javascript">
+            createGrid();
+        </script>
+    </body>
+    <form>
+        
+    </form>
+</html>
