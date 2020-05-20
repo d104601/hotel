@@ -90,26 +90,9 @@
         }
     </style>
 </head>
-<script>
-        function checkPasswordMatch() 
-        {
-        var password = $("#password").val();
-        var confirmPassword = $("#confirmpassword").val();
-
-        if (password != confirmPassword)
-            $("#divCheckPasswordMatch").html("Passwords do not match!");
-        else
-         $("#divCheckPasswordMatch").html("Passwords match.");
-        }
-
-        jQuery(document).ready(function () 
-        {
-            $("#password, #confirmpassword").keyup(checkPasswordMatch);
-        });
-</script>
 <body>
 <div class="signup-form">
-    <form action="signup.php" method="POST">
+    <form action="signup.php" method="post">
         <h2>Sign Up</h2>
         <p>Please fill in this form to create an account!</p>
         <hr>
@@ -124,13 +107,11 @@
 
         </div>
         <div class="form-group">
-            <input type="password" class="form-control" name="password" placeholder="Password" id = "password" required="required">
+            <input type="password" class="form-control" name="password" placeholder="Password" required="required">
         </div>
         <div class="form-group">
-            <input type="password" class="form-control" name="confirm_password" id = "confirmpassword" placeholder="Confirm Password" required="required" onchange="checkPasswordMatch();">
-            <div id = "divCheckPasswordMatch" style = "color: black;" ></div>
+            <input type="password" class="form-control" name="confirm_password" placeholder="Confirm Password" required="required">
         </div>
-        
 
         <div class="form-group">
             <button type="submit" class="btn btn-primary btn-lg">Sign Up</button>
