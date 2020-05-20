@@ -14,8 +14,8 @@ if($pw != $pwc)
 }
 else
 {
-    $namecheck = $db->query("SELECT EXISTS(SELECT *from customer WHERE username='$username') AS SUCCESS");
-    if($namecheck == 1)
+    $namecheck = mysqli_query($db,"SELECT *from customer WHERE username='$username'");
+    if($namecheck->num_rows != 0)
     {
         header('Location: ./signup_fail_username.html');
         exit();

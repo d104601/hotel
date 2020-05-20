@@ -20,8 +20,7 @@
         }
         else
         {
-            echo "firstname\\";
-        }
+            echo "<p style='color: black; display:inline'>Hello! {$_SESSION['firstname']}. </p> <a type='button' class='btn btn-dark' href='signout.php'>Sign out</a>";        }
         ?>
     </div>
 
@@ -40,7 +39,7 @@
             </tr>
             <tr>
                 <td>
-                    <a class="btn btn-primary btn-lg btn-block" href="signInCheck.php" role="button">Manage My Reservation</a>
+                    <a class="btn btn-primary btn-lg btn-block" href="./signInCheck.php" role="button">Manage My Reservation</a>
                 </td>
             </tr>
         </table>
