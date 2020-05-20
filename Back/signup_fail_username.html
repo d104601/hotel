@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
     <title>Sign Up</title>
-    <link rel="stylesheet" href="../../OneDrive/CS370/css/bootstrap.css">
+    <link rel="stylesheet" href="./css/bootstrap.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <style type="text/css">
@@ -92,12 +92,12 @@
 </head>
 <body>
 <div class="signup-form">
-    <form>
+    <form action="signup.php" method="post">
         <div class="form-group text-center">
             <h5 style='color: red; text-align: center'>This username is already taken</h5>
         </div>
         <div class="form-group text-center">
-            <button class='btn btn-primary btn-lg' onclick="window.location='signup.html'">Go back</button>
+            <button class='btn btn-primary btn-lg' onclick="window.location='signin.html'">Go back</button>
         </div>
     </form>
 </div>

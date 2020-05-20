@@ -1,0 +1,68 @@
+body{
+    background-image: url("public/img/hotelroombg.jpg");
+    font-family: personalFont !important;
+}
+
+h1{
+  font-size: 40px !important;
+}
+
+b{
+  background-image: "";
+}
+
+#room-container {
+width: 40vw;
+margin-left: 5vw;
+}
+
+#rooms {
+border: 1px solid red;
+margin-top: 15px;
+}
+
+#reserve {
+font-family: 'Arapey';
+width: 40vw;
+margin-left: 10vw;
+border: 1px solid black;
+background: rgb(228, 228, 228);
+}
+
+#reserve a {
+padding: 6px 8px 6px 16px;
+text-decoration: none;
+font-size: 20px;
+color: rgb(0, 0, 0);
+display: block;
+}
+
+#reserve button {
+padding: 6px 8px 6px 16px;
+text-decoration: none;
+font-size: 20px;
+color: rgb(0, 0, 0);
+background: rgb(228, 228, 228);
+border: none;
+display: block;
+text-align: left;
+}
+
+#reserve a:hover , #reserve button:hover{
+color: #5bb2f8;
+}
+
+.main {
+display: inline-flex;
+margin-top: 10px;
+text-align: center;
+}
+
+@media screen and (max-height: 450px) {
+.reserve {padding-top: 15px;}
+.reserve a {font-size: 18px;}
+}
+
+.fontstyle {
+font-family: 'Arapey';
+}

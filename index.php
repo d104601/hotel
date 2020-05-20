@@ -56,6 +56,9 @@
         </table>
         </p>
     </div>
+    <div>
+        <a class="btn btn-primary" href="signout.php" role="button">Signout</a>
+    </div>
 </div>
 
 </body>
