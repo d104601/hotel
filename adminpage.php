@@ -2,8 +2,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Admin page</title>
-    <script type="text/javascript" src="../../OneDrive/CS370/js/bootstrap.js"></script>
-    <link rel="stylesheet" href="../../OneDrive/CS370/css/bootstrap.css">
+    <script type="text/javascript" src="./js/bootstrap.js"></script>
+    <link rel="stylesheet" href="./css/bootstrap.css">
 </head>
 <body>
 <div class="container p-3">

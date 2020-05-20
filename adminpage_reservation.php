@@ -1,3 +1,6 @@
+<?php
+
+?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -14,12 +17,6 @@
         <a type='button' class='btn btn-dark' href='adminpage.php'>Go back</a>
         <a type='button' class='btn btn-dark' href='signout.php'>Sign out</a>
     </div>
-    <p>
-    <div class="float-lg-right">
-        <a type='button' class='btn btn-primary' href='admin_addhotel.html'>Add New Hotel</a>
-        <a type='button' class='btn btn-primary' href='admin_removehotelpage.php'>Remove Hotel</a>
-    </div>
-    </p>
 
     <div class="jumbotron">
         <p class="text-center p-4">
@@ -29,11 +26,11 @@
                 <th>Reservation ID</th>
                 <th>Hotel Code</th>
                 <th>Branch Name</th>
-                <th>Roomcode</th>
+                <th>Room code</th>
                 <th>Room Type</th>
                 <th>Check in</th>
                 <th>Check out</th>
-                <th></th>
+                <th>Cancel reservation</th>
             </tr>
             </thead>
             <tbody>
@@ -41,19 +38,23 @@
             session_start();
             $db = mysqli_connect("sql9.freemysqlhosting.net", "sql9341133", "r3xXEQjzaB", "sql9341133","3306");
             $admin = $_SESSION['username_admin'];
+            $currdate = $_SESSION['currentdate'];
             $chain = $_SESSION['hotelchain'];
-            $gethotel = mysqli_query($db,"SELECT *from reservation WHERE hotelchain='$chain'");
+            $gethotel = mysqli_query($db,"SELECT *from reservation WHERE (hotelchain='$chain' AND (checkout = '$currdate' OR checkout > '$currdate'))");
             while($row = mysqli_fetch_array($gethotel))
             {
                 echo "<tr>
 <td>".$row['id']."</td>
-<td name='hotelcode'>".$row['hotelcode']."</td>
+<td>".$row['hotelcode']."</td>
 <td>".$row['hotelname']."</td>
+<td>".$row['roomcode']."</td>
 <td>".$row['roomtype']."</td>
 <td>".$row['checkin']."</td>
 <td>".$row['checkout']."</td>
+<td><a href='cancelreservation.php?id=".$row['id']."'class=\"btn btn-danger\">Cancel</a></td>
 </tr>";
             }
+            echo "Current date: $currdate";
             ?>
             </tbody>
         </table>
