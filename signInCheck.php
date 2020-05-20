@@ -2,6 +2,8 @@
 session_start();
 if(!isset($_SESSION['username']))
 {
-    header('Location: ./signin.html');
+    header('Location: ./signinManage.html');
 }
+else
+    header('Location: ./manageReservation.php');
 ?>

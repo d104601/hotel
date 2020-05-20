@@ -2,8 +2,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Admin page</title>
-    <script type="text/javascript" src="../../OneDrive/CS370/js/bootstrap.js"></script>
-    <link rel="stylesheet" href="../../OneDrive/CS370/css/bootstrap.css">
+    <script type="text/javascript" src="./js/bootstrap.js"></script>
+    <link rel="stylesheet" href="./css/bootstrap.css">
 </head>
 <body>
 <div class="container p-3">
@@ -26,7 +26,7 @@
         <table id="adminmenu" style="margin-left: auto; margin-right: auto;">
             <tr>
                 <td>
-                    <a class="btn btn-primary btn-lg btn-block" href="adminpage_reservation.html" role="button">Manage Reservations</a><br>
+                    <a class="btn btn-primary btn-lg btn-block" href="adminpage_reservation.php" role="button">Manage Reservations</a><br>
                 </td>
             </tr>
             <tr>
