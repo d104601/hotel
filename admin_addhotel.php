@@ -30,13 +30,13 @@ else
     $start = 0;
     while($start < $single)
     {
-        mysqli_query($db, "INSERT INTO rooms(roomcode, hotelcode, roomtype) VALUES('single$start$hotelcode', '$hotelcode', 'single')");
+        mysqli_query($db, "INSERT INTO rooms(roomcode, hotelcode, roomtype) VALUES('regular$start$hotelcode', '$hotelcode', 'Regular')");
         $start++;
     }
     $start = 0;
     while($start < $double)
     {
-        mysqli_query($db, "INSERT INTO rooms(roomcode, hotelcode, roomtype) VALUES('double$start$hotelcode', '$hotelcode', 'double')");
+        mysqli_query($db, "INSERT INTO rooms(roomcode, hotelcode, roomtype) VALUES('deluxe$start$hotelcode', '$hotelcode', 'Deluxe')");
         $start++;
     }
     header('Location: ./adminpage_hotelchain');

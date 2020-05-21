@@ -37,7 +37,7 @@
             $db = mysqli_connect("sql9.freemysqlhosting.net", "sql9341133", "r3xXEQjzaB", "sql9341133","3306");
             $username = $_SESSION['username'];
             $currdate = $_SESSION['currentdate'];
-            $gethotel = mysqli_query($db,"SELECT *from reservation WHERE (username='$username' AND (checkout = '$currdate' OR checkout > '$currdate'))");
+            $gethotel = mysqli_query($db,"SELECT *from reservations WHERE (username='$username' AND (checkout = '$currdate' OR checkout > '$currdate'))");
             while($row = mysqli_fetch_array($gethotel))
             {
                 echo "<tr>

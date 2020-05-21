@@ -64,12 +64,12 @@
                 while($row = mysqli_fetch_array($gethotel))
                 {
                     $currHotelcode = $row['hotelcode'];
-                    $regReserved = mysqli_query($db,"SELECT *FROM reservation
+                    $regReserved = mysqli_query($db,"SELECT *FROM reservations
  WHERE ((hotelcode = '$currHotelcode' AND roomtype = 'regular') 
  AND ((checkin <= '$checkin' AND checkout >= '$checkin')
  OR (checkin <= '$checkout' AND checkout >= '$checkout')
  OR (checkin >= '$checkin' AND checkout <= '$checkout')))");
-                    $delReserved = mysqli_query($db,"SELECT * FROM reservation
+                    $delReserved = mysqli_query($db,"SELECT * FROM reservations
  WHERE ((hotelcode = '$currHotelcode' AND roomtype = 'deluxe') 
  AND ((checkin <= '$checkin' AND checkout >= '$checkin')
  OR (checkin <= '$checkout' AND checkout >= '$checkout')
@@ -77,13 +77,16 @@
 
                     $regAvail = $row['singleroom'] - $regReserved->num_rows;
                     $delAvail = $row['doubleroom'] - $delReserved->num_rows;
-                    echo "<form action='reservation.php' method='post'><tr>
-<td name='hotelname'>".$row['hotelname']."</td>
+                    if($regAvail != 0 || $delAvail !=0)
+                    {
+                        echo "<tr>
+<td>".$row['hotelname']."</td>
 <td>"."(".$row['addressi'].", ".$row['addressj'].")</td>
 <td>Regular: ".$regAvail."<br>Deluxe:".$delAvail."</td>
 <td>Regular: $".$row['pricenormal']."<br>Deluxe: $".$row['pricedeluxe']."</td>
-<td><button type=\"submit\" class=\"btn btn-primary\">Book this hotel</button></td>
-</tr></form>";
+<td><a href='reservation_signincheck.php?hotelcode=".$currHotelcode."&regAvail=".$regAvail."&delAvail=".$delAvail."' class='btn btn-primary'>Book this hotel</a></td>
+</tr>";
+                    }
                 }
                 ?>
                 </tbody>

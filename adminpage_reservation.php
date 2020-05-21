@@ -40,7 +40,7 @@
             $admin = $_SESSION['username_admin'];
             $currdate = $_SESSION['currentdate'];
             $chain = $_SESSION['hotelchain'];
-            $gethotel = mysqli_query($db,"SELECT *from reservation WHERE (hotelchain='$chain' AND (checkout = '$currdate' OR checkout > '$currdate'))");
+            $gethotel = mysqli_query($db,"SELECT *from reservations WHERE (hotelchain='$chain' AND (checkout = '$currdate' OR checkout > '$currdate'))");
             while($row = mysqli_fetch_array($gethotel))
             {
                 echo "<tr>
