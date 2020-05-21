@@ -19,19 +19,37 @@ include 'conn.php';
     </div>
 
     <div class="jumbotron">
+        <h3 style="text-align: center">Click the marker on map to see hotel information</h3>
+
+        <div style="width=606; height=606; text-align: center">
+            <div>
+                <?php
+                $query = mysqli_query($conn, "select * from hotel");
+                while($row = mysqli_fetch_array($query))
+                {
+                    $i = -303 + $row['addressi']*6;
+                    $j = 0 + $row['addressj']*6;
+                    echo "<a href='hotelinfo.php?hotelcode=".$row['hotelcode']."'><img style='position: absolute ;margin-left: ".$i."; margin-top:".$j.";' src=\"images/marker.png\" width=30; height=30;></a>";
+                }
+                ?>
+            </div>
+            <img src="images/map.jpg" width=606; height=606;">
+        </div>
         <p class="text-center p-4">
-        <table class="table table-striped table-dark">
+
+
+        <table class="table table-striped table-dark text-center">
             <thead>
             <tr>
-                <th scope="col">Hotel Name</th>
-                <th colspan=>Hotel Address(i,j)</th>
+                <th>Hotel Name</th>
+                <th>Hotel Address(i,j)</th>
                 <th></th>
             </tr>
             </thead>
             <tbody>
             <?php
             $query = mysqli_query($conn, "select * from hotel");
-            while ($row = mysqli_fetch_array($query)) { ?>
+            while($row = mysqli_fetch_array($query)) { ?>
                 <tr>
                     <td><?php echo $row['hotelname'] ?></td>
                     <td><?php echo "( " . $row["addressi"] . "," . $row['addressj'] . " )"; ?></td>
@@ -68,6 +86,8 @@ include 'conn.php';
     table{
         color:white;
     }
+
+
     body{
         color: #fff;
         background-color: #1d2124;

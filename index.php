@@ -76,6 +76,7 @@
         text-shadow: black 0.2em 0.2em 0.2em;
         color:white;
     }
+
     body{
         color: #fff;
         background-color: #1d2124;
