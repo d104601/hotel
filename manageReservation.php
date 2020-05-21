@@ -1,6 +1,4 @@
-<?php
 
-?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -67,7 +65,7 @@
         margin: 30px auto;
     }
     .jumbotron{
-        background: white;
+        background-image: url('./images/hotel.jpg');
         background-size: cover;
         color:black;
     }

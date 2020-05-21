@@ -1,85 +1,79 @@
-<!DOCTYPE html>
 <?php
 include 'conn.php';
 ?>
-<html style="background-color: rgb(150, 150, 150);">
-
+<html lang="en">
 <head>
-  <!-- Latest compiled and minified CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <title>Hotel Map</title>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.css">
+</head>
+<body>
+<div class="container p-3">
+    <div class="d-inline-block">
+        <h2 style="color: #1d2124">Hotel Map</h2>
+    </div>
+    <div class="d-inline-block float-lg-right">
+        <a type='button' class='btn btn-dark' href='index.php'>Go back</a>
+        <a type='button' class='btn btn-dark' href='signout.php'>Sign out</a>
+    </div>
 
-  <!-- Optional theme -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css" integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous">
+    <div class="jumbotron">
+        <p class="text-center p-4">
+        <table class="table table-striped table-dark">
+            <thead>
+            <tr>
+                <th scope="col">Hotel Name</th>
+                <th colspan=>Hotel Address(i,j)</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <?php
+            $query = mysqli_query($conn, "select * from hotel");
+            while ($row = mysqli_fetch_array($query)) { ?>
+                <tr>
+                    <td><?php echo $row['hotelname'] ?></td>
+                    <td><?php echo "( " . $row["addressi"] . "," . $row['addressj'] . " )"; ?></td>
+                    <td><?php echo "<a href='hotelinfo.php?hotelcode=".$row['hotelcode']."' class='btn btn-primary'>Hotel Information</a>"?></td>
+                </tr>
+                <?php
+            }
+            ?>
+            </tbody>
+        </table>
+        </p>
+        <div class="text-center">
+            <a type='button' class='btn btn-primary' onClick='history.back()'>Go back</a>
+        </div>
+    </div>
+</div>
+</body>
+<script>
 
-  <!-- Latest compiled and minified JavaScript -->
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
-  <meta charset="UTF8" />
-  <meta name="author" content="Y." />
-  <meta name="keywords" content="First Exam" />
-  <meta name="description" content="CSC355 Code" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Exam 1</title>
-  <style>
-    <!-- render with bootstrap if possible-- > h1 {
-    color: blue;
-    font-family: "Times New Roman",
-    Times,
-    serif;
-    font-size: 25px;
-    text-indent: 5cm;
+</script>>
+<style type="text/css">
+    .container{
+        background: #ffffff;
+        box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+        margin: 30px auto;
+    }
+    .jumbotron{
+        background-image: url('images/hotel.jpg');
+        background-size: cover;
+        text-shadow: black 0.2em 0.2em 0.2em;
+        color:white;
     }
 
-    .btn {
-      margin: 4px 4px;
-      background-color: #1c87c9;
-      border: 3px solid #000000;
-      border-radius: 5px;
-      text-align: center;
-      font-size: 10px;
-      color: #fff;
-      cursor: pointer;
-      width: 70px;
-      height: 70px;
-      word-break: keep-all;
+    table{
+        color:white;
     }
-
-    *:hover {
-      color: black;
+    body{
+        color: #fff;
+        background-color: #1d2124;
+        font-family: 'Roboto', sans-serif;
     }
-
-    body {
-      padding-top: 5%;
-      text-align: center;
-    }
-
-    h1 {
-      text-indent: 0em;
-    }
-
-    </style>
-
-  <table class="table table-bordered">
-    <thead>
-      <tr>
-        <th scope="col">Hotel ID</th>
-        <th scope="col">Hotel Name</th>
-        <th colspan="2">Hotel Address(x,y)</th>
-      </tr>
-    </thead>
-    <tbody>
-      <?php
-      $query = mysqli_query($conn, "select * from hotel");
-      while ($row = mysqli_fetch_array($query)) { ?>
-        <tr>
-          <th scope="row"><?php echo $row['hotelcode'] ?></th>
-          <td><?php echo $row['hotelname'] ?></td>
-          <td><?php echo $row["addressi"] . "," . $row['addressj']; ?></td>
-
-        </tr>
-      <?php
-      }
-      ?>
-    </tbody>
-  </table>
-
+</style>
 </html>
+
+

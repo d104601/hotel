@@ -8,6 +8,7 @@ $gethotel = mysqli_query($db,"SELECT *from hotel WHERE hotelcode = '$hotelcode'"
 while($row = mysqli_fetch_array($gethotel))
 {
     $getadmin = $row['admin'];
+    $hotelname = $row['hotelname'];
     $getchain = mysqli_query($db,"SELECT *from hoteladmin WHERE username = '$getadmin'");
     while($row2 = mysqli_fetch_array($getchain))
     {
@@ -30,16 +31,14 @@ while($row = mysqli_fetch_array($getAvailRoom))
     $roomcode = $row['roomcode'];
 }
 
-
-
 $username = $_SESSION['username'];
 $first = $_POST['firstname'];
 $last = $_POST['lastname'];
 $checkin = $_SESSION['checkin'];
 $checkout = $_SESSION['checkout'];
 
-mysqli_query($db, "INSERT INTO reservations(hotelcode, hotelchain, roomcode, roomtype, username, firstname, lastname, checkin, checkout)
-VALUES('$hotelcode', '$hotelchain', '$roomcode', '$roomtype', '$username', '$first', '$last', '$checkin', '$checkout')");
+mysqli_query($db, "INSERT INTO reservations(hotelcode, hotelchain, hotelname, roomcode, roomtype, username, firstname, lastname, checkin, checkout)
+VALUES('$hotelcode', '$hotelchain','$hotelname' ,'$roomcode', '$roomtype', '$username', '$first', '$last', '$checkin', '$checkout')");
 header('Location: ./reservation_success.html');
 
 ?>

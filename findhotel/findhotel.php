@@ -15,12 +15,12 @@
         session_start();
         if(!isset($_SESSION['username']))
         {
-            echo '<a type="button" class="btn btn-info" href="signin.html">Sign In</a>
-<a type="button" class="btn btn-info" href="signup.html">Sign Up</a>';
+            echo '<a type="button" class="btn btn-info" href="../signin.html">Sign In</a>
+<a type="button" class="btn btn-info" href="../signup.html">Sign Up</a>';
         }
         else
         {
-            echo "<p style='color: black; display:inline'>Hello! {$_SESSION["firstname"]}. </p> <a type='button' class='btn btn-dark' href='signout.php'>Sign out</a>";
+            echo "<p style='color: black; display:inline'>Hello! {$_SESSION["firstname"]}. </p> <a type='button' class='btn btn-dark' href='../signout.php'>Sign out</a>";
         }
         ?>
     </div>

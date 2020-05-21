@@ -1,6 +1,6 @@
 <?php
 session_start();
-if($_SESSION['hotelcode']!=$_GET['hotelcode'])
+if(!isset($_SESSION['hotelcode']))
 {
     $_SESSION['hotelcode'] = $_GET['hotelcode'];
     $_SESSION['regAvail'] = $_GET['regAvail'];
