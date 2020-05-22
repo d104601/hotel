@@ -18,7 +18,7 @@
 
     <div class="jumbotron">
         <p class="text-center p-4">
-        <table id="hotelchain" class="table table-striped">
+        <table id="hotelchain" class="table table-striped table-dark">
             <thead>
             <tr>
                 <th>Reservation ID</th>

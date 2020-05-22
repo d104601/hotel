@@ -142,9 +142,14 @@ $currhotel = $_SESSION['hotelcode'];
             Room Type
             <select class="form-control" name="roomtype" required="required">
                 <?php
-                if($_SESSION['regAvail'] != 0)
+                if($_SESSION['regAvail'] <= 0)
+                    echo"<option value='Regular' disabled='disabled'>Regular(Sold out)</option>";
+                else
                     echo"<option value='Regular'>Regular</option>";
-                if($_SESSION['delAvail'] != 0)
+
+                if($_SESSION['delAvail'] <= 0)
+                    echo"<option value='Deluxe' disabled='disabled'>Deluxe(Sold out)</option>";
+                else
                     echo"<option value='Deluxe'>Deluxe</option>";
                 ?>
             </select>

@@ -39,6 +39,11 @@ $checkout = $_SESSION['checkout'];
 
 mysqli_query($db, "INSERT INTO reservations(hotelcode, hotelchain, hotelname, roomcode, roomtype, username, firstname, lastname, checkin, checkout)
 VALUES('$hotelcode', '$hotelchain','$hotelname' ,'$roomcode', '$roomtype', '$username', '$first', '$last', '$checkin', '$checkout')");
+
+unset($_SESSION['hotelcode']);
+unset($_SESSION['regAvail']);
+unset($_SESSION['delAvail']);
+
 header('Location: ./reservation_success.html');
 
 ?>

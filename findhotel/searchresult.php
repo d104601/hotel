@@ -65,15 +65,15 @@
                 {
                     $currHotelcode = $row['hotelcode'];
                     $regReserved = mysqli_query($db,"SELECT *FROM reservations
- WHERE ((hotelcode = '$currHotelcode' AND roomtype = 'regular') 
+ WHERE ((hotelcode = '$currHotelcode' AND roomtype = 'Regular') 
  AND ((checkin <= '$checkin' AND checkout >= '$checkin')
  OR (checkin <= '$checkout' AND checkout >= '$checkout')
  OR (checkin >= '$checkin' AND checkout <= '$checkout')))");
                     $delReserved = mysqli_query($db,"SELECT * FROM reservations
- WHERE ((hotelcode = '$currHotelcode' AND roomtype = 'deluxe') 
+ WHERE (hotelcode = '$currHotelcode' AND roomtype = 'Deluxe') 
  AND ((checkin <= '$checkin' AND checkout >= '$checkin')
  OR (checkin <= '$checkout' AND checkout >= '$checkout')
- OR (checkin >= '$checkin' AND checkout <= '$checkout')))");
+ OR (checkin >= '$checkin' AND checkout <= '$checkout'))");
 
                     $regAvail = $row['singleroom'] - $regReserved->num_rows;
                     $delAvail = $row['doubleroom'] - $delReserved->num_rows;
